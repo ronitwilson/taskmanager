@@ -1,15 +1,8 @@
 const express = require('express')
+const contTasks = require('../controllers/tasks')
 
 var router = express.Router()
 
-router.get("/", (req , res) => {
-    res.send("fetch task from router")
-    console.log("get tasks")
-})
-
-function fetchTaskFn(req, res) {
-    res.send("will fetch tasks from db ?")
-    console.log("fetch tasks") 
-}
+router.get("/", contTasks.fetchTaskFn)
 
 module.exports = router
