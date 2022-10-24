@@ -1,3 +1,4 @@
+var routes = require('./routes/tasks')
 const express = require('express')
 
 const app = express()
@@ -10,11 +11,7 @@ app.get('/hello', (req, res) => {
 
 )
 
-app.get('/api/v1/tasks', (req, res) => {
-    res.send("will fetch tasks")
-    console.log("fetch tasks") }
-
-)
+app.get('/api/v1/tasks', routes.fetchTaskFn)
 
 
 app.listen(port, () => {
