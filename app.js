@@ -1,4 +1,4 @@
-var routes = require('./routes/tasks')
+var taskRoute = require('./routes/tasks')
 const express = require('express')
 
 const app = express()
@@ -10,8 +10,8 @@ app.get('/hello', (req, res) => {
     console.log("hello route") }
 
 )
-
-app.get('/api/v1/tasks', routes.fetchTaskFn)
+app.use('/api/v1/tasks',taskRoute)
+// app.get('/api/v1/tasks', routes.fetchTaskFn)
 
 
 app.listen(port, () => {
